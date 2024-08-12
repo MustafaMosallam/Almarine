@@ -1,0 +1,294 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SR-{YYYY}-{####}",
+ "creation": "2024-07-11 20:44:20.070577",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "customer_link",
+  "column_break_tuwo",
+  "shipment_request_status",
+  "shipper_info",
+  "shipper_name",
+  "column_break_sevl",
+  "shipper_phone",
+  "reciver_info",
+  "revicer_name",
+  "column_break_lhqu",
+  "reciver_phone",
+  "shipment_info",
+  "shipment_pickup_time",
+  "pickup_country",
+  "pickup_city",
+  "column_break_uhur",
+  "shipment_type",
+  "deliver_country",
+  "delivery_city",
+  "payload_info",
+  "type_of_shipment",
+  "name_of_shipment",
+  "column_break_vofp",
+  "state_of_shipment",
+  "weight_of_shipment",
+  "column_break_qwde",
+  "packing_type",
+  "image_of_shipment",
+  "\u0627\u0644\u0639\u0631\u0636_\u0648\u0637\u0631\u064a\u0642\u0629_\u0627\u0644\u062f\u0641\u0639_section",
+  "offered_price",
+  "column_break_xwnb",
+  "type_of_currency",
+  "column_break_bdsc",
+  "tax",
+  "column_break_psrz",
+  "full_price",
+  "column_break_pihq",
+  "way_of_payment"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_tuwo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_sevl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_lhqu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_uhur",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_vofp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_qwde",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "\u0627\u0644\u0639\u0631\u0636_\u0648\u0637\u0631\u064a\u0642\u0629_\u0627\u0644\u062f\u0641\u0639_section",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0639\u0631\u0636 \u0648\u0637\u0631\u064a\u0642\u0629 \u0627\u0644\u062f\u0641\u0639"
+  },
+  {
+   "fieldname": "column_break_xwnb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_bdsc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_psrz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_pihq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_link",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u0639\u0645\u064a\u0644",
+   "options": "Almarine Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "shipment_request_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "\u062d\u0627\u0644\u0629 \u0627\u0644\u0637\u0644\u0628",
+   "options": "\u0645\u0639\u0644\u0642\u0647\n\u0645\u0642\u0628\u0648\u0644\u0629\n\u0645\u0631\u0641\u0648\u0636\u0629",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer_link.customer_name",
+   "fetch_if_empty": 1,
+   "fieldname": "shipper_name",
+   "fieldtype": "Data",
+   "label": "\u0627\u0633\u0645 \u0627\u0644\u0634\u0627\u062d\u0646",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer_link.customer_phone_number",
+   "fetch_if_empty": 1,
+   "fieldname": "shipper_phone",
+   "fieldtype": "Phone",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u062d\u0646",
+   "reqd": 1
+  },
+  {
+   "fieldname": "revicer_name",
+   "fieldtype": "Data",
+   "label": "\u0627\u0633\u0645 \u0627\u0644\u0645\u0633\u062a\u0644\u0645",
+   "reqd": 1
+  },
+  {
+   "fieldname": "reciver_phone",
+   "fieldtype": "Phone",
+   "label": "\u0631\u0642\u0645 \u0647\u0627\u062a\u0641 \u0627\u0644\u0645\u0633\u062a\u0644\u0645",
+   "reqd": 1
+  },
+  {
+   "fieldname": "shipment_pickup_time",
+   "fieldtype": "Datetime",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0634\u062d\u0646\u0629",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pickup_country",
+   "fieldtype": "Select",
+   "label": "\u062f\u0648\u0644\u0629 \u0627\u0644\u0627\u0633\u062a\u0644\u0627\u0645",
+   "options": "\u0645\u0635\u0631\n\u0627\u0644\u0627\u0631\u062f\u0646\n\u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629\n\u0642\u0637\u0631\n\u0627\u0644\u0643\u0648\u064a\u062a\n\u0639\u0645\u0627\u0646\n\u0627\u0644\u0627\u0645\u0627\u0631\u0627\u062a\n\u0641\u0644\u0633\u0637\u064a\u0646\n\u0644\u064a\u0628\u064a\u0627\n\u062a\u0648\u0646\u0633\n\u0627\u0644\u062c\u0632\u0627\u0626\u0631\n\u0627\u0644\u0639\u0631\u0627\u0642\n\u0627\u0644\u0633\u0648\u062f\u0627\u0646\n\u0627\u0644\u0628\u062d\u0631\u064a\u0646\n\u0633\u0648\u0631\u064a\u0627",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pickup_city",
+   "fieldtype": "Select",
+   "label": "\u0645\u062f\u064a\u0646\u0629 \u0627\u0644\u0627\u0633\u062a\u0644\u0627\u0645",
+   "options": "cairo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "shipment_type",
+   "fieldtype": "Select",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0634\u062d\u0646\u0629",
+   "options": "\u0628\u0631\u064a\n\u0628\u062d\u0631\u064a(\u062d\u0627\u0648\u064a\u0627\u062a)\n\u062c\u0648\u064a\n\u0628\u0648\u0627\u062e\u0631 \u0628\u0636\u0627\u0626\u0639 \u0639\u0627\u0645\u0629\n\u0628\u0648\u0627\u062e\u0631 \u0635\u0628",
+   "reqd": 1
+  },
+  {
+   "fieldname": "deliver_country",
+   "fieldtype": "Select",
+   "label": "\u062f\u0648\u0644\u0629 \u0627\u0644\u062a\u0648\u0635\u064a\u0644",
+   "options": "\u0645\u0635\u0631\n\u0627\u0644\u0627\u0631\u062f\u0646\n\u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629\n\u0642\u0637\u0631\n\u0627\u0644\u0643\u0648\u064a\u062a\n\u0639\u0645\u0627\u0646\n\u0627\u0644\u0627\u0645\u0627\u0631\u0627\u062a\n\u0641\u0644\u0633\u0637\u064a\u0646\n\u0644\u064a\u0628\u064a\u0627\n\u062a\u0648\u0646\u0633\n\u0627\u0644\u062c\u0632\u0627\u0626\u0631\n\u0627\u0644\u0639\u0631\u0627\u0642\n\u0627\u0644\u0633\u0648\u062f\u0627\u0646\n\u0627\u0644\u0628\u062d\u0631\u064a\u0646\n\u0633\u0648\u0631\u064a\u0627",
+   "reqd": 1
+  },
+  {
+   "fieldname": "delivery_city",
+   "fieldtype": "Select",
+   "label": "\u0645\u062f\u064a\u0646\u0629 \u0627\u0644\u062a\u0648\u0635\u064a\u0644",
+   "options": "cairo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type_of_shipment",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062d\u0645\u0648\u0644\u0629"
+  },
+  {
+   "fieldname": "name_of_shipment",
+   "fieldtype": "Data",
+   "label": "\u0627\u0633\u0645 \u0627\u0644\u062d\u0645\u0648\u0644\u0629"
+  },
+  {
+   "fieldname": "state_of_shipment",
+   "fieldtype": "Data",
+   "label": "\u062d\u0627\u0644\u0629 \u0627\u0644\u0645\u0627\u062f\u0647"
+  },
+  {
+   "fieldname": "weight_of_shipment",
+   "fieldtype": "Data",
+   "label": "\u0648\u0632\u0646 \u0627\u0644\u062d\u0645\u0648\u0644\u0629"
+  },
+  {
+   "fieldname": "packing_type",
+   "fieldtype": "Select",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u0639\u0628\u0626\u0629",
+   "options": "\u0628\u0627\u0644\u064a\u062a\u0627\u062a\n\u0635\u0646\u0627\u062f\u064a\u0642 \u062e\u0634\u0628\u064a\u0629\n\u0634\u0648\u0627\u0644\u0627\u062a\n\u062c\u0627\u0645\u0628\u0648 \u0628\u0627\u062c\n\u0633\u0627\u0626\u0628\u0629\n\u0635\u0628\n\u0643\u0631\u0627\u062a\u064a\u0646"
+  },
+  {
+   "fieldname": "image_of_shipment",
+   "fieldtype": "Attach Image",
+   "label": "\u0635\u0648\u0631\u0629 \u0627\u0644\u062d\u0645\u0648\u0644\u0629"
+  },
+  {
+   "fieldname": "type_of_currency",
+   "fieldtype": "Select",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0639\u0645\u0644\u0629",
+   "options": "USD\nEGP\nJOD\nSAR\nQAR\nKWD\n\u062f\u0648\u0644\u0627\u0631 \u0627\u0645\u0631\u064a\u0643\u064a\n\u062c\u0646\u064a\u0647 \u0645\u0635\u0631\u064a\n\u0631\u064a\u0627\u0644 \u0633\u0639\u0648\u062f\u064a\n\u062f\u064a\u0646\u0627\u0631 \u0627\u0631\u062f\u0646\u064a\n\u062f\u064a\u0646\u0627\u0631 \u0643\u0648\u064a\u062a\u064a"
+  },
+  {
+   "fieldname": "way_of_payment",
+   "fieldtype": "Select",
+   "label": "\u0637\u0631\u064a\u0642\u0629 \u0627\u0644\u062f\u0641\u0639",
+   "options": "\u0646\u0642\u062f\u0627\n\u0633\u0644\u0641\u0629 \u0648\u0627\u0644\u0645\u062a\u0628\u0642\u064a \u0639\u0646\u062f \u0627\u0644\u062a\u0633\u0644\u064a\u0645\n\u0628\u062f\u0648\u0646 \u0633\u0644\u0641\u0629 \u0639\u0646\u062f \u0627\u0644\u062a\u0633\u0644\u064a\u0645"
+  },
+  {
+   "fieldname": "offered_price",
+   "fieldtype": "Int",
+   "label": "\u0627\u0644\u0633\u0639\u0631 \u0627\u0644\u0645\u0639\u0631\u0648\u0636"
+  },
+  {
+   "fieldname": "shipper_info",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0634\u0627\u062d\u0646"
+  },
+  {
+   "fieldname": "reciver_info",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0645\u0633\u062a\u0644\u0645"
+  },
+  {
+   "fieldname": "shipment_info",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0634\u062d\u0646\u0629"
+  },
+  {
+   "fieldname": "payload_info",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u062d\u0645\u0648\u0644\u0629"
+  },
+  {
+   "fieldname": "tax",
+   "fieldtype": "Percent",
+   "label": "\u0627\u0644\u0636\u0631\u064a\u0628\u0629 \u0627\u0644\u0645\u0636\u0627\u0641\u0629"
+  },
+  {
+   "fieldname": "full_price",
+   "fieldtype": "Int",
+   "label": "\u0627\u0644\u0645\u0633\u062a\u062d\u0642 \u0645\u0639\u0627 \u0627\u0644\u0636\u0631\u064a\u0628\u0629"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-07-22 22:32:42.523480",
+ "modified_by": "Administrator",
+ "module": "Almarine",
+ "name": "Almarine Shipment Request",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Almarine Customer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Almarine Driver",
+   "share": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "customer_link"
+}

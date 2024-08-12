@@ -4,6 +4,10 @@ app_publisher = "Mosalam Company"
 app_description = "an intermediary between the customer who requests shipping, and on the other side there is a company or individual who accepts the order"
 app_email = "info@mosalam.com"
 app_license = "mit"
+
+
+
+
 # required_apps = []
 
 # Includes in <head>
