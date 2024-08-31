@@ -6,20 +6,16 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "customer_name",
+  "customer_firstname",
   "customer_phone_number",
+  "customer_email",
   "column_break_vxlb",
+  "customer_lastname",
   "customer_country",
-  "customer_address"
+  "customer_address",
+  "user"
  ],
  "fields": [
-  {
-   "fieldname": "customer_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "\u0627\u0644\u0627\u0633\u0645 \u0643\u0627\u0645\u0644",
-   "reqd": 1
-  },
   {
    "fieldname": "column_break_vxlb",
    "fieldtype": "Column Break"
@@ -43,11 +39,39 @@
    "fieldname": "customer_address",
    "fieldtype": "Small Text",
    "label": "\u0627\u0644\u0639\u0646\u0648\u0627\u0646"
+  },
+  {
+   "fieldname": "customer_firstname",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u0627\u0633\u0645 \u0627\u0644\u0623\u0648\u0644",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_email",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0625\u064a\u0645\u064a\u0644",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_lastname",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u0627\u0633\u0645 \u0627\u0644\u0623\u062e\u064a\u0631",
+   "reqd": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "user",
+   "options": "User",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-22 20:38:17.906099",
+ "modified": "2024-08-31 06:52:34.018666",
  "modified_by": "Administrator",
  "module": "Almarine",
  "name": "Almarine Customer",
@@ -71,5 +95,6 @@
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "customer_name"
+ "title_field": "customer_firstname",
+ "translated_doctype": 1
 }

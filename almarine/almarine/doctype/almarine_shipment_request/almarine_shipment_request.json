@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:SR-{YYYY}-{####}",
+ "autoname": "format:SR-{shipper_name}-{YYYY}-{####}",
  "creation": "2024-07-11 20:44:20.070577",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -94,24 +94,23 @@
   {
    "fieldname": "customer_link",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "\u0627\u0644\u0639\u0645\u064a\u0644",
    "options": "Almarine Customer",
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fieldname": "shipment_request_status",
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "\u062d\u0627\u0644\u0629 \u0627\u0644\u0637\u0644\u0628",
-   "options": "\u0645\u0639\u0644\u0642\u0647\n\u0645\u0642\u0628\u0648\u0644\u0629\n\u0645\u0631\u0641\u0648\u0636\u0629",
-   "reqd": 1
+   "options": "\u0645\u0639\u0644\u0642\u0647\n\u0645\u0642\u0628\u0648\u0644\u0629\n\u0645\u0631\u0641\u0648\u0636\u0629"
   },
   {
    "fetch_from": "customer_link.customer_name",
    "fetch_if_empty": 1,
    "fieldname": "shipper_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "\u0627\u0633\u0645 \u0627\u0644\u0634\u0627\u062d\u0646",
    "reqd": 1
   },
@@ -257,7 +256,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-22 22:32:42.523480",
+ "modified": "2024-08-31 06:53:42.776309",
  "modified_by": "Administrator",
  "module": "Almarine",
  "name": "Almarine Shipment Request",
@@ -272,18 +271,9 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Almarine Customer",
+   "role": "System Manager",
    "share": 1,
    "write": 1
-  },
-  {
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Almarine Driver",
-   "share": 1
   }
  ],
  "show_title_field_in_link": 1,
