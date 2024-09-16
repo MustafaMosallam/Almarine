@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "customer_firstname",
+  "new_password",
   "customer_phone_number",
   "customer_email",
   "column_break_vxlb",
@@ -67,17 +68,32 @@
    "label": "user",
    "options": "User",
    "read_only": 1
+  },
+  {
+   "fieldname": "new_password",
+   "fieldtype": "Password",
+   "label": "\u0627\u0644\u0631\u0642\u0645 \u0627\u0644\u0633\u0631\u064a"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-31 06:52:34.018666",
+ "modified": "2024-09-16 14:29:06.310114",
  "modified_by": "Administrator",
  "module": "Almarine",
  "name": "Almarine Customer",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Almarine Customer",
+   "share": 1,
+   "write": 1
+  },
   {
    "create": 1,
    "delete": 1,
@@ -86,7 +102,19 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "System Manager",
+   "role": "Almarine dispatcher",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
    "share": 1,
    "write": 1
   }

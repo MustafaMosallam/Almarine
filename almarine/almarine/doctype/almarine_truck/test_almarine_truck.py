@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestAlmarineDriver(FrappeTestCase):
+class TestAlmarineTruck(FrappeTestCase):
 	pass

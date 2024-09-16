@@ -5,37 +5,46 @@ from frappe import _
 from frappe.model.document import Document
 
 class AlmarineShipmentRequest(Document):
-     def on_update(self):
+    def validate(self):
+        # ... (your existing validation logic)
+
+        def validate(self):
+    # ... (your existing validation logic)
+
+            if frappe.session and frappe.session.user:
+                # Check if the current user has the 'Almarine Customer' role
+                has_customer_role = frappe.db.exists(
+                    "Has Role", {"parent": frappe.session.user, "role": "Almarine Customer"}
+                )
+
+                if has_customer_role:
+                    # Fetch the Almarine Customer document associated with the current user
+                    customer = frappe.db.get_value("Almarine Customer", {"user": frappe.session.user}, "name")
+
+                    if customer:
+                        # Only set customer_link if it's not already set (for new requests)
+                        if not self.customer_link:
+                            self.customer_link = customer
+                    else:
+                        frappe.throw(_("No customer profile found for the current user."))
+
+                # No restrictions for admin or dispatcher
+            
+    def on_update(self):
         if self.shipment_request_status == "مقبولة":  # Or any other status that triggers shipment creation
             self.create_shipment()
-     def create_shipment(self):
+    def create_shipment(self):
         shipment = frappe.new_doc("Almarine Shipment")
         # Populate shipment fields from the shipment request
         shipment.update({
-            "customer_name": self.name,
-            "shpper_name": self.shipper_name,
-            "رقم_هاتف_الشاحن": self.shipper_phone,
-            "اسم_المستلم": self.revicer_name,
-            "رقم_هاتف_المستلم": self.reciver_phone,
-            "pickup_time": self.shipment_pickup_time,
-            "pickup_country": self.pickup_country,
-            "pickup_city": self.pickup_city,
-            "shipment_type": self.shipment_type,
-            "دولة_التوصيل": self.deliver_country,
-            "مدينة_التوصيل": self.delivery_city,
-            "payload_type": self.type_of_shipment,
-            "payload_name": self.name_of_shipment,
-            "payload_state": self.state_of_shipment,
-            "payload_weight": self.weight_of_shipment,
-            "packing_type": self.packing_type,
-            "payload_image": self.image_of_shipment,
-            "offered_price": self.offered_price,
-            "currency_type": self.type_of_currency,
-            "tax": self.tax,
-            "full_price": self.full_price,
-            "way_of_payment": self.way_of_payment,
-            "shipment_status": "جاري التوصيل"  # Set initial shipment status
-        })
+        "customer_name": self.name,  # ربط بطلب الشحن
+        "truck_type": self.truck_type,  # استخدام الحقل من "Almarine Shipment" وليس الحقل المجلوب
+        "مدينة_التوصيل": self.delivery_city,
+        "دولة_التوصيل": self.deliver_country,
+        "موعد_الشحنة": self.shipment_pickup_time,
+        "حالة_الطلب": self.shipment_request_status,
+        # ... (اي حقول اخرى من طلب الشحن تحتاجها في الشحنة)
+    })
         shipment.insert()
 
         # Trigger driver assignment logic here (if applicable)

@@ -1,16 +1,12 @@
 frappe.ready(function() {
-    // ... your other web form logic
-
     frappe.web_form.after_load = () => {
-        // Check if a user is logged in
+        // Automatically set the customer_link field based on the logged-in user
         if (frappe.session && frappe.session.user) {
-            // Fetch the customer linked to the user
             frappe.call({
                 method: "almarine.almarine.doctype.almarine_customer.almarine_customer.get_customer_for_user",
-                args: {}, // No arguments needed in this case
+                args: {},
                 callback: function(r) {
                     if (r.message) {
-                        // Set the customer_link field to the fetched customer name
                         frappe.web_form.set_value("customer_link", r.message);
                     } else {
                         frappe.msgprint("Error fetching customer information. Please log in again.");
@@ -19,9 +15,10 @@ frappe.ready(function() {
             });
         } else {
             frappe.msgprint("You need to be logged in to create a shipment request.");
-            // Optionally, you can redirect the user to the login page here.
+            // Optionally, redirect to the login page.
         }
     };
 
-    // ... your validation logic
+    // Add your validation logic here using frappe.web_form.validate
+    // ... 
 });
