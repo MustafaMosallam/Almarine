@@ -18,8 +18,8 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2024-08-31 06:11:35.556637",
- "modified_by": "menna@gmail.com",
+ "modified": "2024-09-14 04:31:42.329073",
+ "modified_by": "Administrator",
  "module": "Almarine",
  "name": "create-shipment-request",
  "owner": "menna@gmail.com",
@@ -183,6 +183,20 @@
    "precision": "",
    "read_only": 0,
    "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "truck_type",
+   "fieldtype": "Select",
+   "hidden": 0,
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0634\u0627\u062d\u0646\u0629",
+   "max_length": 0,
+   "max_value": 0,
+   "options": "\u0634\u0627\u062d\u0646\u0629 \u062c\u0648\u0627\u0646\u0628\n\u0634\u0627\u062d\u0646\u0629 \u0633\u0637\u062d\u0629\n\u0634\u0627\u062d\u0646\u0629 \u0633\u062a\u0627\u0631\u0629\n\u0634\u0627\u062d\u0629 \u0635\u0646\u062f\u0648\u0642 \u0645\u063a\u0644\u0642\n\u0634\u0627\u062d\u0646\u0629 \u0628\u0631\u0627\u062f\n\u0634\u0627\u062d\u0629 \u062d\u0645\u0648\u0644\u0627\u062a \u062b\u0642\u064a\u0644\u0629\n\u0643\u0633\u0627\u062d\u0629\n\u062a\u0644\u064a\u0633\u0643\u0648\u0628\n\u0634\u0627\u062d\u0646\u0629 \u0642\u0644\u0627\u0628\n\u0634\u0627\u062d\u0646\u0629 6 \u0645\u062a\u0631\n\u0634\u0627\u062d\u0646\u0629 \u062d\u0627\u0648\u064a\u0627\u062a \u062f\u0627\u062e\u0644\u064a\n\u062d\u0627\u0648\u064a\u0629 20 \u0642\u062f\u0645\n\u062d\u0627\u0648\u064a\u0629 40 \u0642\u062f\u0645\n\u062d\u0627\u0648\u064a\u0629 40 \u0642\u062f\u0645 HC\n\u0628\u0627\u062e\u0631\u0629",
+   "precision": "",
+   "read_only": 0,
+   "reqd": 1,
    "show_in_filter": 0
   },
   {
@@ -508,6 +522,19 @@
    "options": "\u0646\u0642\u062f\u0627\n\u0633\u0644\u0641\u0629 \u0648\u0627\u0644\u0645\u062a\u0628\u0642\u064a \u0639\u0646\u062f \u0627\u0644\u062a\u0633\u0644\u064a\u0645\n\u0628\u062f\u0648\u0646 \u0633\u0644\u0641\u0629 \u0639\u0646\u062f \u0627\u0644\u062a\u0633\u0644\u064a\u0645",
    "precision": "",
    "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "main_info",
+   "fieldtype": "Section Break",
+   "hidden": 0,
+   "label": "\u0627\u0644\u0645\u0639\u0644\u0648\u0645\u0627\u062a \u0627\u0644\u0623\u0633\u0627\u0633\u064a\u0629",
+   "max_length": 0,
+   "max_value": 0,
+   "precision": "",
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   }
