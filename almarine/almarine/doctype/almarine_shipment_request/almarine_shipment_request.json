@@ -39,12 +39,12 @@
   "image_of_shipment",
   "\u0627\u0644\u0639\u0631\u0636_\u0648\u0637\u0631\u064a\u0642\u0629_\u0627\u0644\u062f\u0641\u0639_section",
   "offered_price",
-  "type_of_currency",
+  "full_price",
   "column_break_xwnb",
   "way_of_payment",
+  "type_of_currency",
   "column_break_bdsc",
-  "tax",
-  "full_price"
+  "tax"
  ],
  "fields": [
   {
@@ -141,9 +141,8 @@
   },
   {
    "fieldname": "pickup_city",
-   "fieldtype": "Select",
+   "fieldtype": "Data",
    "label": "\u0645\u062f\u064a\u0646\u0629 \u0627\u0644\u0627\u0633\u062a\u0644\u0627\u0645",
-   "options": "cairo",
    "reqd": 1
   },
   {
@@ -162,58 +161,70 @@
   },
   {
    "fieldname": "delivery_city",
-   "fieldtype": "Select",
+   "fieldtype": "Data",
    "label": "\u0645\u062f\u064a\u0646\u0629 \u0627\u0644\u062a\u0648\u0635\u064a\u0644",
-   "options": "cairo",
    "reqd": 1
   },
   {
    "fieldname": "type_of_shipment",
-   "fieldtype": "Data",
-   "label": "\u0646\u0648\u0639 \u0627\u0644\u062d\u0645\u0648\u0644\u0629"
+   "fieldtype": "Select",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062d\u0645\u0648\u0644\u0629",
+   "options": "\u0645\u0648\u0627\u062f \u063a\u0630\u0627\u0626\u064a\u0629\n\u0645\u0648\u0627\u062f \u0643\u064a\u0645\u0627\u0648\u064a\u0629\n\u0645\u0648\u0627\u062f \u0635\u0646\u0627\u0639\u064a\u0629\n\u0645\u0648\u0627\u062f \u0632\u0631\u0627\u0639\u064a\u0629",
+   "reqd": 1
   },
   {
    "fieldname": "name_of_shipment",
    "fieldtype": "Data",
-   "label": "\u0627\u0633\u0645 \u0627\u0644\u062d\u0645\u0648\u0644\u0629"
+   "label": "\u0627\u0633\u0645 \u0627\u0644\u062d\u0645\u0648\u0644\u0629",
+   "reqd": 1
   },
   {
    "fieldname": "state_of_shipment",
-   "fieldtype": "Data",
-   "label": "\u062d\u0627\u0644\u0629 \u0627\u0644\u0645\u0627\u062f\u0647"
+   "fieldtype": "Select",
+   "label": "\u062d\u0627\u0644\u0629 \u0627\u0644\u0645\u0627\u062f\u0647",
+   "options": "\u0633\u0627\u0626\u0644\u0629\n\u0635\u0644\u0628\u0629\n\u063a\u0627\u0632\u064a\u0629\n\u062e\u0637\u0631\u0629\n\u0645\u0634\u062a\u0639\u0644\u0629",
+   "reqd": 1
   },
   {
    "fieldname": "weight_of_shipment",
-   "fieldtype": "Data",
-   "label": "\u0648\u0632\u0646 \u0627\u0644\u062d\u0645\u0648\u0644\u0629"
+   "fieldtype": "Select",
+   "label": "(\u0637\u0646) \u0648\u0632\u0646 \u0627\u0644\u062d\u0645\u0648\u0644\u0629",
+   "options": "1 -10\n10-15\n15-20\n20-25\n25-30\n30-35\n35-40\n40-45\n45-50\n50-60\n60-70\n70-80\n80-90\n100\n100-500\n500-1000\n1000-1500\n2000-2500\n2500-3000\n3500\n4000\n4500\n5000\n6000\n7000\n8000\n9000\n10000\n15000\n20000",
+   "reqd": 1
   },
   {
    "fieldname": "packing_type",
    "fieldtype": "Select",
    "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u0639\u0628\u0626\u0629",
-   "options": "\u0628\u0627\u0644\u064a\u062a\u0627\u062a\n\u0635\u0646\u0627\u062f\u064a\u0642 \u062e\u0634\u0628\u064a\u0629\n\u0634\u0648\u0627\u0644\u0627\u062a\n\u062c\u0627\u0645\u0628\u0648 \u0628\u0627\u062c\n\u0633\u0627\u0626\u0628\u0629\n\u0635\u0628\n\u0643\u0631\u0627\u062a\u064a\u0646"
+   "options": "\u0628\u0627\u0644\u064a\u062a\u0627\u062a\n\u0635\u0646\u0627\u062f\u064a\u0642 \u062e\u0634\u0628\u064a\u0629\n\u0634\u0648\u0627\u0644\u0627\u062a\n\u062c\u0627\u0645\u0628\u0648 \u0628\u0627\u062c\n\u0633\u0627\u0626\u0628\u0629\n\u0635\u0628\n\u0643\u0631\u0627\u062a\u064a\u0646",
+   "reqd": 1
   },
   {
    "fieldname": "image_of_shipment",
    "fieldtype": "Attach Image",
-   "label": "\u0635\u0648\u0631\u0629 \u0627\u0644\u062d\u0645\u0648\u0644\u0629"
+   "label": "\u0635\u0648\u0631\u0629 \u0627\u0644\u062d\u0645\u0648\u0644\u0629",
+   "reqd": 1
   },
   {
    "fieldname": "type_of_currency",
    "fieldtype": "Select",
    "label": "\u0646\u0648\u0639 \u0627\u0644\u0639\u0645\u0644\u0629",
-   "options": "USD\nEGP\nJOD\nSAR\nQAR\nKWD\n\u062f\u0648\u0644\u0627\u0631 \u0627\u0645\u0631\u064a\u0643\u064a\n\u062c\u0646\u064a\u0647 \u0645\u0635\u0631\u064a\n\u0631\u064a\u0627\u0644 \u0633\u0639\u0648\u062f\u064a\n\u062f\u064a\u0646\u0627\u0631 \u0627\u0631\u062f\u0646\u064a\n\u062f\u064a\u0646\u0627\u0631 \u0643\u0648\u064a\u062a\u064a"
+   "options": "USD\nEGP\nJOD\nSAR\nQAR\nKWD\n\u062f\u0648\u0644\u0627\u0631 \u0627\u0645\u0631\u064a\u0643\u064a\n\u062c\u0646\u064a\u0647 \u0645\u0635\u0631\u064a\n\u0631\u064a\u0627\u0644 \u0633\u0639\u0648\u062f\u064a\n\u062f\u064a\u0646\u0627\u0631 \u0627\u0631\u062f\u0646\u064a\n\u062f\u064a\u0646\u0627\u0631 \u0643\u0648\u064a\u062a\u064a",
+   "reqd": 1
   },
   {
    "fieldname": "way_of_payment",
    "fieldtype": "Select",
    "label": "\u0637\u0631\u064a\u0642\u0629 \u0627\u0644\u062f\u0641\u0639",
-   "options": "\u0646\u0642\u062f\u0627\n\u0633\u0644\u0641\u0629 \u0648\u0627\u0644\u0645\u062a\u0628\u0642\u064a \u0639\u0646\u062f \u0627\u0644\u062a\u0633\u0644\u064a\u0645\n\u0628\u062f\u0648\u0646 \u0633\u0644\u0641\u0629 \u0639\u0646\u062f \u0627\u0644\u062a\u0633\u0644\u064a\u0645"
+   "options": "\u0646\u0642\u062f\u0627\n\u0633\u0644\u0641\u0629 \u0648\u0627\u0644\u0645\u062a\u0628\u0642\u064a \u0639\u0646\u062f \u0627\u0644\u062a\u0633\u0644\u064a\u0645\n\u0628\u062f\u0648\u0646 \u0633\u0644\u0641\u0629 \u0639\u0646\u062f \u0627\u0644\u062a\u0633\u0644\u064a\u0645",
+   "reqd": 1
   },
   {
    "fieldname": "offered_price",
    "fieldtype": "Int",
-   "label": "\u0627\u0644\u0633\u0639\u0631 \u0627\u0644\u0645\u0639\u0631\u0648\u0636"
+   "label": "\u0627\u0644\u0633\u0639\u0631 \u0627\u0644\u0645\u0639\u0631\u0648\u0636",
+   "non_negative": 1,
+   "reqd": 1
   },
   {
    "fieldname": "shipper_info",
@@ -238,12 +249,16 @@
   {
    "fieldname": "tax",
    "fieldtype": "Percent",
-   "label": "\u0627\u0644\u0636\u0631\u064a\u0628\u0629 \u0627\u0644\u0645\u0636\u0627\u0641\u0629"
+   "label": " 3% + \u0627\u0644\u0636\u0631\u064a\u0628\u0629 \u0627\u0644\u0645\u0636\u0627\u0641\u0629",
+   "read_only": 1,
+   "reqd": 1
   },
   {
    "fieldname": "full_price",
    "fieldtype": "Int",
-   "label": "\u0627\u0644\u0645\u0633\u062a\u062d\u0642 \u0645\u0639\u0627 \u0627\u0644\u0636\u0631\u064a\u0628\u0629"
+   "label": "\u0627\u0644\u0633\u0639\u0631 \u0627\u0644\u0645\u0639\u0631\u0648\u0636 \u0645\u0639\u0627 \u0627\u0644\u0636\u0631\u064a\u0628\u0629",
+   "non_negative": 1,
+   "reqd": 1
   },
   {
    "fieldname": "main_info",
@@ -269,7 +284,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-17 14:49:07.414592",
+ "modified": "2024-09-19 11:07:25.617858",
  "modified_by": "Administrator",
  "module": "Almarine",
  "name": "Almarine Shipment Request",
