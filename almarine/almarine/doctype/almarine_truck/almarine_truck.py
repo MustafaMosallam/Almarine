@@ -31,7 +31,7 @@ class AlmarineTruck(Document):
             "role": "Almarine Truck Owner" 
         })
 
-		user.insert()
+		user.insert(ignore_permissions=True)
 
         # Link the truck to the newly created User
 		self.user = user.name

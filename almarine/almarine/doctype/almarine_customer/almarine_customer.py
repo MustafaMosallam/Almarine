@@ -1,3 +1,4 @@
+import time
 import frappe
 from frappe.model.document import Document
 from frappe.utils import random_string
@@ -9,15 +10,13 @@ class AlmarineCustomer(Document):
         # Create a new User record
         user = frappe.new_doc("User")
         user.email = self.customer_email
-        user.first_name = self.customer_firstname + ' ' + self.customer_lastname
-
-        user.append("roles", {
-            "doctype": "Has Role",
-            "role": "Almarine Customer" 
-        })
-
-        user.insert()
-
+        user.first_name = self.customer_firstname 
+        user.last_name = self.customer_lastname
+        user.append('roles',{
+					"doctype": "Has Role",
+					"role":"Almarine Customer"
+					})
+        user.insert(ignore_permissions=True)
         # Link the Almarine Customer to the newly created User
         self.user = user.name
         self.save()
