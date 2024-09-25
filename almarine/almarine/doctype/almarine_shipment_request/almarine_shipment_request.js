@@ -7,7 +7,7 @@ frappe.ui.form.on("Almarine Shipment Request", {
 	},
     onload: function(frm) {
         // Check user role and set field properties accordingly
-        if (frappe.user.has_role("Almarine Customer")) {
+        if (frappe.user.has_role("Almarine Customer") && !frappe.user.has_role("Administrator")) {
             console.log(frappe.user);
             // Make specific fields read-only for customers
             frm.set_df_property("customer_link", "read_only", 1); 

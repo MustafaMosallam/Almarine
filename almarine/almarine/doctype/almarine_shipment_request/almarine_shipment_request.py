@@ -34,6 +34,12 @@ class AlmarineShipmentRequest(Document):
                     frappe.throw(_("No customer profile found for the current user."))
 
                 # No restrictions for admin or dispatcher
+                
+            if self.pickup_country == self.deliver_country:
+                self.tax = 0.07 + 0.03  # 7%
+            else:
+                self.tax = 0.03 + 0.03   # 3%
+            self.full_price = self.offered_price + (self.offered_price * (self.tax ) )
             
     def on_update(self):
         if self.shipment_request_status == "مقبولة":  # Or any other status that triggers shipment creation
@@ -56,4 +62,5 @@ class AlmarineShipmentRequest(Document):
         # ...
 
         frappe.msgprint(_("Shipment created successfully!"))
+    # In your custom server script for "Almarine Shipment Request"
 
